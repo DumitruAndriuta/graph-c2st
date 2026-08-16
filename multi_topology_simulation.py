@@ -131,11 +131,11 @@ def run_one_replicate(topology, d_nodes, n_samples, effect_size, rep):
 
     result = {}
 
-    y_pred, y_test = knn_wl.get_predictions(D_matrix, y, idx_train, idx_test)
+    y_pred, y_test = knn.get_predictions(D_matrix, y, idx_train, idx_test)
     _, p_val, _ = permutation_test(y_pred, y_test, B=INNER_B, random_state=rep)
     result["KNN"] = p_val
 
-    y_pred, y_test = kernel_svm_wl.get_predictions(K_matrix, y, idx_train, idx_test)
+    y_pred, y_test = kernel_svm.get_predictions(K_matrix, y, idx_train, idx_test)
     _, p_val, _ = permutation_test(y_pred, y_test, B=INNER_B, random_state=rep)
     result["SVM"] = p_val
 
