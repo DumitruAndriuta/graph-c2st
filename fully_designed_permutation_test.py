@@ -10,7 +10,7 @@ from joblib import Parallel, delayed
 import torch
 
 from data_gen import generate_data
-from methods import kernel_svm_wl, gcn, ginestet2017, dubey2019, knn_wl, lovato2020
+from methods import kernel_svm, gcn, ginestet2017, dubey2019, knn, lovato2020
 from permutation_test import permutation_test, permutation_test_refit
 
 # ----------------------------------------------------------------------
@@ -110,12 +110,12 @@ def run_one_replicate(gamma2, rep):
     result = {}
 
     _, p_val, _ = permutation_test_refit(
-        lambda y_labels: knn_wl.fit_predict_full(D_matrix, y_labels),
+        lambda y_labels: knn.fit_predict_full(D_matrix, y_labels),
         y, B=INNER_B, random_state=rep)
     result["KNN"] = p_val
 
     _, p_val, _ = permutation_test_refit(
-        lambda y_labels: kernel_svm_wl.fit_predict_full(K_matrix, y_labels),
+        lambda y_labels: kernel_svm.fit_predict_full(K_matrix, y_labels),
         y, B=INNER_B, random_state=rep)
     result["SVM"] = p_val
 
