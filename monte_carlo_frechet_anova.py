@@ -20,7 +20,7 @@ B_REPLICATES = 100
 INNER_B = 500
 ALPHA = 0.05
 GCN_EPOCHS = 150   # ceiling; early stopping inside gcn.get_predictions handles the rest
-N_JOBS = 22        # matches os.cpu_count() on this machine
+N_JOBS = os.cpu_count() or 1        # matches os.cpu_count() on this machine
 N_SAMPLES = 450
 
 gamma2_values = np.array([2.0, 2.05, 2.1, 2.15, 2.2, 2.25, 2.3, 2.35, 2.4, 2.45, 2.5,
