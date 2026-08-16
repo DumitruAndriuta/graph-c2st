@@ -41,7 +41,7 @@ from scipy.stats import beta
 from joblib import Parallel, delayed
 import torch
 
-from ginestet_data_gen import generate_data
+from generate_multi_topology import generate_data
 from methods import kernel_svm, gcn, ginestet2017, dubey2019, knn, lovato2020
 from permutation_test import permutation_test
 
