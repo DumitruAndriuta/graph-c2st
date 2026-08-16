@@ -21,7 +21,7 @@ INNER_B = 500      # refit-per-permutation is much cheaper than the old
                     # CV-refit design, but still B refits per rep per method
 ALPHA = 0.05
 GCN_EPOCHS = 150   # ceiling; early stopping inside gcn.fit_predict_full handles the rest
-N_JOBS = 16        # matches os.cpu_count() on this machine
+N_JOBS = os.cpu_count() or 1        # matches os.cpu_count() on this machine
 N_SAMPLES = 25
 
 #gamma2_values = np.array([2.0, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0])
