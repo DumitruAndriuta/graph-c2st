@@ -57,7 +57,7 @@ B_REPLICATES = 100
 INNER_B = 500
 ALPHA = 0.05
 GCN_EPOCHS = 150   # ceiling; early stopping inside gcn.get_predictions handles the rest
-N_JOBS = 22        # matches os.cpu_count() on this machine
+N_JOBS = os.cpu_count() or 1        # matches os.cpu_count() on this machine
 
 CHECKPOINT_PATH = "ginestet_sim5_grid_checkpoint.pkl"
 
