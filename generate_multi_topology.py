@@ -121,7 +121,7 @@ def generate_subject_laplacian(S, T, rng):
 
 
 def generate_data(topology="block", d_nodes=10, n_samples=100, T=50,
-                   effect_size=2, test_size=0.3, random_state=42):
+                   effect_size=2, test_size=0.5, random_state=42):
     if topology not in ("block", "small_world"):
         raise ValueError('topology must be "block" or "small_world"')
 
