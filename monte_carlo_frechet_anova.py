@@ -10,7 +10,7 @@ from joblib import Parallel, delayed
 import torch
 
 from data_gen import generate_data
-from methods import kernel_svm_wl, gcn, ginestet2017, dubey2019, knn_wl, lovato2020
+from methods import kernel_svm, gcn, ginestet2017, dubey2019, knn, lovato2020
 from permutation_test import permutation_test
 
 # ----------------------------------------------------------------------
