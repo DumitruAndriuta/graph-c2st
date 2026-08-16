@@ -1,7 +1,4 @@
-import networkx as nx
 import numpy as np
-from grakel import graph_from_networkx
-from grakel.kernels import WeisfeilerLehman, VertexHistogram
 from sklearn.neighbors import KNeighborsClassifier
 
 def get_predictions(distance_matrix, y, idx_train, idx_test):
